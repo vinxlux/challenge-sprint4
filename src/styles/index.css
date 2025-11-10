@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    background: #181c24;
+    color: #e3e6ee;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-700 text-white font-bold rounded-full shadow-lg hover:from-blue-700 hover:to-cyan-500 transition-all duration-200;
+    border: none;
+    backdrop-filter: blur(2px);
+  }
+  .btn-secondary {
+    @apply px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-900 text-gray-100 font-bold rounded-full shadow hover:from-gray-900 hover:to-gray-700 transition-all duration-200;
+    border: none;
+    backdrop-filter: blur(2px);
+  }
+  .glass-card {
+    @apply rounded-2xl shadow-xl p-8 bg-white/10 border border-white/20 backdrop-blur-lg;
+  }
+  .glass-section {
+    @apply rounded-3xl shadow-2xl p-10 bg-white/10 border border-white/20 backdrop-blur-xl;
+  }
+}
