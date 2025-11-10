@@ -11,10 +11,13 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js'
       }
     }
   },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
   server: {
     proxy: {
       '/api': {
