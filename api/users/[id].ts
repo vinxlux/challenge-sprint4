@@ -1,15 +1,20 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import { getById, updateUser, deleteUser, Usuario } from '../_data.js';
+import { corsMiddleware } from '../_cors.js';
 
-const send = (res: any, status: number, data: any) => res.status(status).json({ status, data });
+const send = (res: VercelResponse, status: number, data: any) => res.status(status).json({ status, data });
 
-export default function handler(req: any, res: any) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (corsMiddleware(req, res)) return;
+  
   const { method } = req;
-  const { id } = req.query || {};
+  const userId = Array.isArray(req.query.id) ? req.query.id[0] : req.query.id;
+  
   try {
-    if (!id) return send(res, 400, { erro: 'ID é obrigatório' });
+    if (!userId) return send(res, 400, { erro: 'ID é obrigatório' });
 
     if (method === 'GET') {
-      const user = getById(id);
+      const user = getById(userId);
       if (!user) return send(res, 404, { erro: 'Usuário não encontrado' });
       return send(res, 200, user);
     }
@@ -19,13 +24,13 @@ export default function handler(req: any, res: any) {
       if (!dados?.nome || !dados?.telefone || !dados?.email || !dados?.cpf) {
         return send(res, 400, { erro: 'Todos os campos são obrigatórios', recebido: dados });
       }
-      const updated = updateUser(id, dados as Partial<Omit<Usuario, 'id'>>);
+      const updated = updateUser(userId, dados as Partial<Omit<Usuario, 'id'>>);
       if (!updated) return send(res, 404, { erro: 'Usuário não encontrado' });
       return send(res, 200, updated);
     }
 
     if (method === 'DELETE') {
-      const ok = deleteUser(id);
+      const ok = deleteUser(userId);
       if (!ok) return send(res, 404, { erro: 'Usuário não encontrado' });
       return send(res, 200, { mensagem: 'Usuário excluído com sucesso' });
     }

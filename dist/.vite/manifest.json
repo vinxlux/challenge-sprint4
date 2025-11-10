@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index-BFsJdFWm.js",
+    "file": "assets/index-Jjby2LfF.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -8,23 +8,8 @@
       "assets/index-BYVHgRaC.css"
     ],
     "assets": [
-      "assets/facebook-icon-gCBtm57Z.png",
-      "assets/instagram-icon-jtV59js8.png",
-      "assets/linkedin-icon-D9kgryN5.png",
       "assets/logo-B5rafILz.png"
     ]
-  },
-  "src/assets/imagens/facebook-icon.png": {
-    "file": "assets/facebook-icon-gCBtm57Z.png",
-    "src": "src/assets/imagens/facebook-icon.png"
-  },
-  "src/assets/imagens/instagram-icon.png": {
-    "file": "assets/instagram-icon-jtV59js8.png",
-    "src": "src/assets/imagens/instagram-icon.png"
-  },
-  "src/assets/imagens/linkedin-icon.png": {
-    "file": "assets/linkedin-icon-D9kgryN5.png",
-    "src": "src/assets/imagens/linkedin-icon.png"
   },
   "src/assets/imagens/logo.png": {
     "file": "assets/logo-B5rafILz.png",

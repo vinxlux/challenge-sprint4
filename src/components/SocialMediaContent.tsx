@@ -1,25 +1,22 @@
 import { SocialLink } from './SocialLink';
-import facebookIcon from '../assets/imagens/facebook-icon.png';
-import instagramIcon from '../assets/imagens/instagram-icon.png';
-import linkedinIcon from '../assets/imagens/linkedin-icon.png';
 
 export const SocialMediaContent = () => {
   const socialLinks = [
     {
       name: 'Facebook',
-      icon: facebookIcon,
+      icon: '/images/facebook-icon.png',
       url: 'https://www.facebook.com/HCFMUSP',
       description: 'Siga-nos no Facebook para atualizações diárias sobre eventos, histórias inspiradoras e informações importantes sobre saúde.'
     },
     {
       name: 'Instagram',
-      icon: instagramIcon,
+      icon: '/images/instagram-icon.png',
       url: 'https://www.instagram.com/hcfmusp',
       description: 'Conecte-se conosco no Instagram para ver fotos e vídeos dos bastidores, histórias de pacientes e dicas de saúde.'
     },
     {
       name: 'LinkedIn',
-      icon: linkedinIcon,
+      icon: '/images/linkedin-icon.png',
       url: 'https://www.linkedin.com/company/hcfmusp',
       description: 'Acompanhe o HC no LinkedIn para notícias sobre pesquisas médicas, oportunidades profissionais e avanços na área da saúde.'
     }
