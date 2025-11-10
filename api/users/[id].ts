@@ -1,4 +1,4 @@
-import { getById, updateUser, deleteUser, Usuario } from '../_data';
+import { getById, updateUser, deleteUser, Usuario } from '../_data.js';
 
 const send = (res: any, status: number, data: any) => res.status(status).json({ status, data });
 
