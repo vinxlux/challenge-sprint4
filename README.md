@@ -152,7 +152,7 @@ npx vercel dev
 
 Insira o link do repositório do grupo abaixo (substitua o placeholder):
 
-https://github.com/
+https://github.com/vinxlux/challenge-sprint4
 
 ---
 
